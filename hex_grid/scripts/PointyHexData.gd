@@ -1,17 +1,17 @@
-class_name PointyHexGridData
-extends HexGridData
+class_name PointyHexData
+extends HexData
 
 func _init():
-	super._init(HexGridOrientation.POINTY)
+	super._init(HexOrientation.POINTY)
 
-	node_width = sqrt(3) * node_size
-	node_height = 2 * node_size
+	_node_width = sqrt(3) * node_size
+	_node_height = 2 * node_size
 
-func get_horz_spacing() -> double:
-	return node_width
+func get_horz_spacing() -> float:
+	return _node_width
 
-func get_vert_spacing() -> double:
-	return 0.75 * node_height
+func get_vert_spacing() -> float:
+	return 0.75 * _node_height
 
 func get_hex_corner(pos: Vector2, corner_idx: int) -> Vector2:
 	var angle_deg = 60 * corner_idx - 30
